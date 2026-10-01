@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Fragrance Gazette</title>
+<style>
+:root{--bg:#fff;--ink:#111;--mut:#777;--line:#ddd;--red:#c81e1e}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Iowan Old Style",Georgia,serif}
+.sans{font-family:ui-sans-serif,-apple-system,"Segoe UI",sans-serif}
+.w{max-width:960px;margin:0 auto;padding:30px 20px 60px}
+.masthead{text-align:center;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:6px;position:relative}
+.masthead h1{font-size:clamp(32px,7vw,52px);margin:0;font-weight:600;letter-spacing:.01em}
+.meta-row{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.1em;
+ text-transform:uppercase;color:var(--mut);margin-top:8px;font-family:ui-sans-serif,sans-serif}
+.accent{width:3px;height:14px;background:var(--red);display:inline-block;margin-right:4px;vertical-align:middle}
+
+h2{font-size:15px;text-transform:uppercase;letter-spacing:.14em;text-align:center;
+ margin:46px 0 18px;font-weight:600}
+
+/* Launches — short scannable lines */
+.launch-list{list-style:none;margin:0 auto;padding:0;max-width:640px;columns:1}
+.launch-list li{padding:9px 0;border-bottom:1px solid var(--line);font-size:16px}
+.launch-list a{color:var(--ink);text-decoration:none;font-weight:600}
+.launch-list a:hover{color:var(--red)}
+.src{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.05em;
+ font-family:ui-sans-serif,sans-serif;margin-left:8px}
+
+/* Events */
+.event-list{list-style:none;margin:0 auto;padding:0;max-width:640px}
+.event-list li{padding:10px 0;border-bottom:1px solid var(--line);font-size:16px}
+.ev-date{font-weight:600;color:var(--red);margin-right:10px}
+
+/* Influencers — 3-column with red dividers, matching the mockup */
+.inf-row{display:flex;gap:0;justify-content:center;flex-wrap:wrap}
+.inf-col{flex:1 1 260px;max-width:300px;padding:0 22px;border-left:2px solid var(--red)}
+.inf-col:first-child{border-left:none}
+.inf-col h4{text-align:center;font-size:14px;letter-spacing:.05em;margin:0 0 14px;
+ font-family:ui-sans-serif,sans-serif;font-weight:700}
+.inf-col ul{list-style:none;padding:0;margin:0}
+.inf-col li{padding:9px 0;border-bottom:1px dotted var(--line);font-size:14.5px}
+.charac{display:block;font-size:11.5px;color:var(--mut);font-style:italic;margin-top:2px}
+
+/* Feeds — deliberately least prominent */
+.feed-list{list-style:none;margin:0 auto;padding:0;max-width:640px}
+.feed-list li{padding:6px 0;border-bottom:1px dotted var(--line);font-size:13px;color:#444}
+.feed-list a{color:#444}
+
+.empty{text-align:center;color:var(--mut);font-size:13px;font-family:ui-sans-serif,sans-serif}
+
+footer{margin-top:50px;padding-top:14px;border-top:2px solid var(--ink);font-size:11.5px;
+ color:var(--mut);font-family:ui-sans-serif,sans-serif;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="w">
+<div class="masthead">
+  <h1>The Fragrance Gazette</h1>
+  <div class="meta-row">
+    <span><span class="accent"></span>Edition of {{DATE}}</span>
+    <span>Rebuilt on every run — not a weekly or monthly recap</span>
+  </div>
+</div>
+
+{{SECTIONS}}
+
+<footer>
+Sourced from: Now Smell This and T3 (launches) · TrendAroma (events) ·
+Jeremy Fragrance, CurlyFragrance and Redolessence's YouTube uploads, last 60 days
+(top-discussed) · Givaudan, IFF, Symrise, dsm-firmenich, Nez, Fragrantica,
+Premium Beauty News (feeds). Built automatically by this repo's GitHub Action —
+see README for what's high vs. low confidence per source. "Characterization"
+under each influencer entry is a keyword match against the video's own title
+and description, not a transcript — it's a signal, not a transcript-based summary.
+</footer>
+</div>
+</body>
+</html>
